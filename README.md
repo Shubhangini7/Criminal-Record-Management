@@ -13,3 +13,8 @@ Day:2
 create the required database in mysql or oracle and establish JDBC connection with the database
 * JdbcTemplate: 
 We can perform all the database operations by the help of JdbcTemplate class such as insertion, updation, deletion and retrieval of the data from the database.
+
+Day:3
+1> create the required tables
+* JPA :Java Persistence API 
+Spring Data JPA makes implementation of the data access layer incredibly easy by abstracting most of the complexities involved in persisting data.
