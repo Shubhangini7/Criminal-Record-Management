@@ -19,5 +19,5 @@ Day:3
 * JPA :Java Persistence API 
 Spring Data JPA makes implementation of the data access layer incredibly easy by abstracting most of the complexities involved in persisting data.
 
-2> insert data into databse
+      2> insert data into databse
 * data flow : client side page-->Controller-->service-->DAO/Mapper
