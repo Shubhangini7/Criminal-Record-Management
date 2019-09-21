@@ -6,7 +6,7 @@ Name of the project : Criminal Record Management
 Implement the Criminal Record Management System for
 Jailers, Police and CBI Officers.
 
-### Day1: 
+### Day:1 
 select defination of project
 
 ### Day:2
