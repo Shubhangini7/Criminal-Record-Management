@@ -8,7 +8,7 @@ import javax.persistence.Table;
 
 @Entity 
 @Table(name = "Judge")
-public class Judge{
+public class Judge extends User{
 	private String code;
 	private String name;
 	private String email;
@@ -17,7 +17,7 @@ public class Judge{
 	private LocalDateTime dateOfRegistration;
     private LocalDateTime dateOfModification;
     
-    @Id
+   
 	public String getCode() {
 		return code;
 	}

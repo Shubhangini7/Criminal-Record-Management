@@ -6,6 +6,8 @@ public class JudgeDTO {
 	private String email;
 	private String phone;
 	private String courtName;
+	private String username;
+    private String password;
 	
 	public String getCode() {
 		return code;
@@ -36,6 +38,18 @@ public class JudgeDTO {
 	}
 	public void setCourtName(String courtName) {
 		this.courtName = courtName;
+	}
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
 	}
 	
 
