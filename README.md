@@ -18,5 +18,6 @@ Day:3
 1> create the required tables
 * JPA :Java Persistence API 
 Spring Data JPA makes implementation of the data access layer incredibly easy by abstracting most of the complexities involved in persisting data.
+
 2> insert data into databse
 * data flow : client side page-->Controller-->service-->DAO/Mapper
