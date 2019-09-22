@@ -5,7 +5,7 @@ public class PoliceDTO {
 	private String name;
 	private String email;
 	private String phone;
-	private String courtName;
+	private String unit;
 	public String getCode() {
 		return code;
 	}
@@ -30,12 +30,10 @@ public class PoliceDTO {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-	public String getCourtName() {
-		return courtName;
+	public String getUnit() {
+		return unit;
 	}
-	public void setCourtName(String courtName) {
-		this.courtName = courtName;
+	public void setUnit(String unit) {
+		this.unit = unit;
 	}
-	
-
 }
