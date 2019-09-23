@@ -8,7 +8,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="PoliceOfficers")
-public class PoliceOfficers {
+public class PoliceOfficers extends User{
 
 	private String code;
 	private String name;
@@ -18,7 +18,6 @@ public class PoliceOfficers {
 	private LocalDateTime dateOfRegistration;
     private LocalDateTime dateOfModification;
     
-    @Id
 	public String getCode() {
 		return code;
 	}

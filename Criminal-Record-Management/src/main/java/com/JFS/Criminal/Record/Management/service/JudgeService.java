@@ -25,7 +25,7 @@ public class JudgeService {
 	private UserRepository userRepository;
 	@Autowired
 	private RoleRepository roleRepository;
-	public void addJudge(JudgeDTO judgeDTO)
+	public void addJudge(JudgeDTO judgeDTO) throws RoleNotAvailableException
 	{
 		// TODO Auto-generated method stub
 		Judge judge = JudgeMapper.toEntity(judgeDTO);
@@ -38,7 +38,7 @@ public class JudgeService {
 		Credential credential = JudgeMapper.toCredentialEntity(judgeDTO);
 		
 		Optional<Role> optionalRole = roleRepository.findByName(com.JFS.Criminal.Record.Management.entity.enumeration.Role.ROLE_JUDGE.name());
-		Role role = optionalRole.get();
+		Role role = optionalRole.orElseThrow(()-> new RoleNotAvailableException());
 		credential.getRoles().add(role); 
 		role.getCredential().add(credential);
 		credential.setUser(storedUser);
