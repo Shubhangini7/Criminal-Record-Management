@@ -21,3 +21,5 @@ create the required database in mysql or oracle and establish JDBC connection wi
 
 * insert data into databse
   - data flow : client side page-->Controller-->service-->DAO/Mapper
+### Day:4
+* Exception Handling
