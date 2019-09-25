@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 import com.JFS.Criminal.Record.Management.dto.JudgeDTO;
@@ -17,7 +18,7 @@ import com.JFS.Criminal.Record.Management.repository.JudgeRepository;
 import com.JFS.Criminal.Record.Management.repository.RoleRepository;
 import com.JFS.Criminal.Record.Management.repository.UserRepository;
 @Service
-public class JudgeService {
+public class JudgeService{
 
 	@Autowired
 	private JudgeRepository judgeRepository;
@@ -25,6 +26,8 @@ public class JudgeService {
 	private UserRepository userRepository;
 	@Autowired
 	private RoleRepository roleRepository;
+	
+	@Async
 	public void addJudge(JudgeDTO judgeDTO) throws RoleNotAvailableException
 	{
 		// TODO Auto-generated method stub
@@ -44,8 +47,14 @@ public class JudgeService {
 		credential.setUser(storedUser);
 		storedUser.setCredential(credential);
 		
-		Judge savedJudge = judgeRepository.saveAndFlush(judge);
-		
-	}
-	
+		try {
+			System.out.println("invoking as asynchronous method" + Thread.currentThread().getName());
+			Thread.sleep(1000L);
+			Judge savedJudge = judgeRepository.saveAndFlush(judge);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+			
+	}	
 }

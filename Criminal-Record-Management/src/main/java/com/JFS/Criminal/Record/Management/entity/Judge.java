@@ -3,7 +3,7 @@ package com.JFS.Criminal.Record.Management.entity;
 import java.time.LocalDateTime;
 
 import javax.persistence.Entity;
-import javax.persistence.Id;
+
 import javax.persistence.Table;
 
 @Entity 

@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import com.JFS.Criminal.Record.Management.dto.JudgeDTO;
+import com.JFS.Criminal.Record.Management.exception.RoleNotAvailableException;
 import com.JFS.Criminal.Record.Management.service.JudgeService;
 
 
@@ -23,10 +24,9 @@ public class JudgeController {
 		return "judgeRegiPg";
 	}
 	@PostMapping
-	public String registerJudge(JudgeDTO judgeDTO)
+	public String registerJudge(JudgeDTO judgeDTO) throws RoleNotAvailableException
 	{
 		JudgeService.addJudge(judgeDTO);
 		return "homePg";
-		
 	}
 }

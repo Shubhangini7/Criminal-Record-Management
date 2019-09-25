@@ -47,7 +47,7 @@ public class Credential
         this.password = password;
     }
 
-    @ManyToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    @ManyToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
     @JoinTable(
             name = "credential_role",
             joinColumns = @JoinColumn(name = "credential"),
