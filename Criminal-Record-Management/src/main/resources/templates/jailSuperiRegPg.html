@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>											
+<form action="/jailSuperiRegPg" method="post" th:object=${jailSuperObj}>
+<input type='number' placeholder="Identity code" th:field="*{code}">
+<input type='text' placeholder="Name" th:field="*{name}">
+<input type='email' placeholder="email ID" th:field="*{email}">
+<input type='number' placeholder="Phone" th:field="*{phone}">
+<input type='text' placeholder="Jail Name" th:field="*{jailName}">
+<button type="submit">Login</button>
+<a href="/"> home </a>
+</form>
+</body>
+</html>
