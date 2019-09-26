@@ -23,3 +23,6 @@ create the required database in mysql or oracle and establish JDBC connection wi
   - data flow : client side page-->Controller-->service-->DAO/Mapper
 ### Day:4
 * Exception Handling
+
+### Day:5 
+* Multi threading
