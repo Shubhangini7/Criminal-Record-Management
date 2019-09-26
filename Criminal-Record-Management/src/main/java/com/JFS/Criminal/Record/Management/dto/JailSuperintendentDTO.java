@@ -1,12 +1,15 @@
 package com.JFS.Criminal.Record.Management.dto;
 
-public class JaiSuperintendentDTO {
+public class JailSuperintendentDTO {
 
 	private String code;
 	private String name;
 	private String email;
 	private String phone;
-	private String courtName;
+	private String jailName;
+	private String username;
+    private String password;                        
+    
 	public String getCode() {
 		return code;
 	}
@@ -31,11 +34,23 @@ public class JaiSuperintendentDTO {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-	public String getCourtName() {
-		return courtName;
+	public String getJailName() {
+		return jailName;
 	}
-	public void setCourtName(String courtName) {
-		this.courtName = courtName;
+	public void setJailName(String jailName) {
+		this.jailName = jailName;
+	}
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
 	}
 	
 }

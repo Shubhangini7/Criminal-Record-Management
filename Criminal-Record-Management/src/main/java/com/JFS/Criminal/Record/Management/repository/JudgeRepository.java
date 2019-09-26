@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.JFS.Criminal.Record.Management.entity.Judge;
 
 @Repository
-public interface JudgeRepository extends JpaRepository<Judge, String>{
+public interface JudgeRepository extends JpaRepository<Judge, Integer>{
 
 }

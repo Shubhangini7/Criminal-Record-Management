@@ -5,14 +5,13 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PostMapping;
-
 import com.JFS.Criminal.Record.Management.dto.PoliceDTO;
 import com.JFS.Criminal.Record.Management.dto.mapper.PoliceMapper;
 import com.JFS.Criminal.Record.Management.entity.Credential;
 import com.JFS.Criminal.Record.Management.entity.PoliceOfficers;
 import com.JFS.Criminal.Record.Management.entity.Role;
 import com.JFS.Criminal.Record.Management.entity.User;
+import com.JFS.Criminal.Record.Management.exception.RoleNotAvailableException;
 import com.JFS.Criminal.Record.Management.repository.PoliceRepository;
 import com.JFS.Criminal.Record.Management.repository.RoleRepository;
 import com.JFS.Criminal.Record.Management.repository.UserRepository;
@@ -27,7 +26,7 @@ public class PoliceService {
 	@Autowired
 	private RoleRepository roleRepository;
 	
-	public void addPolice(PoliceDTO policeDTO) {
+	public void addPolice(PoliceDTO policeDTO) throws RoleNotAvailableException{
 		PoliceOfficers pOfficers = PoliceMapper.toEntity(policeDTO);
 		LocalDateTime localDateTime = LocalDateTime.now();
 		pOfficers.setDateOfModification(localDateTime);

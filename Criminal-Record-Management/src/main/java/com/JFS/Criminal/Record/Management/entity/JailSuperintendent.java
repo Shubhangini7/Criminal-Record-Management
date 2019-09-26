@@ -3,22 +3,21 @@ package com.JFS.Criminal.Record.Management.entity;
 import java.time.LocalDateTime;
 
 import javax.persistence.Entity;
-import javax.persistence.Id;
+
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "JailSuperintendent")
-public class JailSuperintendent {
+public class JailSuperintendent extends User{
 	private String code;
 	private String name;
 	private String email;
 	private String phone;
-	private String unit;
+	private String jailName;
 	private LocalDateTime dateOfRegistration;
     private LocalDateTime dateOfModification;
     
-    @Id
-	public String getCode() {
+    public String getCode() {
 		return code;
 	}
 	public void setCode(String code) {
@@ -42,11 +41,11 @@ public class JailSuperintendent {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-	public String getUnit() {
-		return unit;
+	public String getJailName() {
+		return jailName;
 	}
-	public void setUnit(String unit) {
-		this.unit = unit;
+	public void setJailName(String jailName) {
+		this.jailName = jailName;
 	}
 	public LocalDateTime getDateOfRegistration() {
 		return dateOfRegistration;

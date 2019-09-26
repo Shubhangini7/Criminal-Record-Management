@@ -6,6 +6,9 @@ public class PoliceDTO {
 	private String email;
 	private String phone;
 	private String unit;
+	private String username;
+    private String password;
+    
 	public String getCode() {
 		return code;
 	}
@@ -35,5 +38,17 @@ public class PoliceDTO {
 	}
 	public void setUnit(String unit) {
 		this.unit = unit;
+	}
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
 	}
 }

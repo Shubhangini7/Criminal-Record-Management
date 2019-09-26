@@ -12,21 +12,21 @@ import com.JFS.Criminal.Record.Management.service.JudgeService;
 
 
 @Controller
-@RequestMapping("/judgeRegiPg")
+@RequestMapping("/judgeRegPg")
 public class JudgeController {
 
 	@Autowired
-	private JudgeService JudgeService;
+	private JudgeService judgeService;
 	@GetMapping
 	public String addJudge(Model model)
 	{
 		model.addAttribute("judgeObj", new JudgeDTO());
-		return "judgeRegiPg";
+		return "judgeRegPg";
 	}
 	@PostMapping
 	public String registerJudge(JudgeDTO judgeDTO) throws RoleNotAvailableException
 	{
-		JudgeService.addJudge(judgeDTO);
+		judgeService.addJudge(judgeDTO);
 		return "homePg";
 	}
 }

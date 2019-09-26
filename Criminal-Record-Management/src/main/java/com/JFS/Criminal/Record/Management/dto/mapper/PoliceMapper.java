@@ -3,6 +3,7 @@ package com.JFS.Criminal.Record.Management.dto.mapper;
 import com.JFS.Criminal.Record.Management.dto.PoliceDTO;
 import com.JFS.Criminal.Record.Management.entity.Credential;
 import com.JFS.Criminal.Record.Management.entity.PoliceOfficers;
+import com.JFS.Criminal.Record.Management.entity.User;
 
 public class PoliceMapper {
 	public static PoliceOfficers toEntity(PoliceDTO policeDTO) {
@@ -15,9 +16,18 @@ public class PoliceMapper {
 		return pOfficers;
 	}
 
-	public static Credential toCredentialEntity(PoliceDTO policeDTO) {
-		// TODO Auto-generated method stub
-		return null;
+	public static User toUserEntity(PoliceDTO dto) {
+		User policeUser = new User();
+		return policeUser;
+		
 	}
+
+	public static Credential toCredentialEntity(PoliceDTO policeDTO) {
+		Credential credential = new Credential();
+		credential.setUsername(policeDTO.getUsername());
+		credential.setPassword(policeDTO.getPassword());
+		return credential;
+	}
+
 
 }

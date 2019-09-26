@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 import com.JFS.Criminal.Record.Management.entity.PoliceOfficers;
 
 @Repository
-public interface PoliceRepository extends JpaRepository<PoliceOfficers, String>{
+public interface PoliceRepository extends JpaRepository<PoliceOfficers, Integer>{
 
 	
 }

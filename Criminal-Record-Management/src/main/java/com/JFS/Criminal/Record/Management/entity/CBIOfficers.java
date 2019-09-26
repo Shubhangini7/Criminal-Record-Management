@@ -3,12 +3,11 @@ package com.JFS.Criminal.Record.Management.entity;
 import java.time.LocalDateTime;
 
 import javax.persistence.Entity;
-import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity							//Entities in JPA are nothing but POJOs representing data that can be persisted to the database.
 @Table(name="CBIOfficers")		//create table with given name in database
-public class CBIOfficers {
+public class CBIOfficers  extends User{
 
 	private String code;
 	private String name;
@@ -18,7 +17,6 @@ public class CBIOfficers {
 	private LocalDateTime dateOfRegistration;
     private LocalDateTime dateOfModification;
     
-    @Id							////ID : define primary key class in database table
 	public String getCode() {	
 		return code;
 	}
