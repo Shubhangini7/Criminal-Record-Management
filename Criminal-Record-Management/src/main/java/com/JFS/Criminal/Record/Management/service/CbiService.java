@@ -36,17 +36,15 @@ public class CbiService {
 		cbi.setDateOfModification(localDateTime);
 		cbi.setDateOfRegistration(localDateTime);
 		
-		User user = CbiMapper.toEntity(cDto);
-		User storedUser = userRepository.saveAndFlush(user);
+		CBIOfficers savedCBI = cbiRepository.saveAndFlush(cbi);
 		Credential credential = CbiMapper.toCredentialEntity(cDto);
 		
 		Optional<Role> optionalRole = roleRepository.findByName(com.JFS.Criminal.Record.Management.entity.enumeration.Role.ROLE_CBIOFFICER.name());
 		Role role = optionalRole.orElseThrow(()-> new RoleNotAvailableException());
 		credential.getRoles().add(role); 
 		role.getCredential().add(credential);
-		credential.setUser(storedUser);
-		storedUser.setCredential(credential);
-		
-		CBIOfficers cOfficers = cbiRepository.saveAndFlush(cbi);
+		credential.setUser(cbi);
+		savedCBI.setCredential(credential);
+		CBIOfficers finalSavedCbi = cbiRepository.saveAndFlush(cbi);
 	}
 }

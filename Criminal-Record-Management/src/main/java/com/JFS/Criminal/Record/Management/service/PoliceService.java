@@ -27,22 +27,23 @@ public class PoliceService {
 	private RoleRepository roleRepository;
 	
 	public void addPolice(PoliceDTO policeDTO) throws RoleNotAvailableException{
+		
 		PoliceOfficers pOfficers = PoliceMapper.toEntity(policeDTO);
+		
 		LocalDateTime localDateTime = LocalDateTime.now();
 		pOfficers.setDateOfModification(localDateTime);
 		pOfficers.setDateOfRegistration(localDateTime);
 		
-		User user = PoliceMapper.toEntity(policeDTO);
-		User storedUser = userRepository.saveAndFlush(user);
+		PoliceOfficers savePoliceOfficers = policeRepository.saveAndFlush(pOfficers);
+
 		Credential credential = PoliceMapper.toCredentialEntity(policeDTO);
-		
 		Optional<Role> optionalRole = roleRepository.findByName(com.JFS.Criminal.Record.Management.entity.enumeration.Role.ROLE_POLICE_OFFICER.name());
 		Role role = optionalRole.get();
 		credential.getRoles().add(role); 
 		role.getCredential().add(credential);
-		credential.setUser(storedUser);
-		storedUser.setCredential(credential);
+		credential.setUser(pOfficers);
+		savePoliceOfficers.setCredential(credential);
 
-		PoliceOfficers savePoliceOfficers = policeRepository.saveAndFlush(pOfficers);
+		PoliceOfficers finalsavePoliceOfficers = policeRepository.saveAndFlush(pOfficers);
 	}
 }

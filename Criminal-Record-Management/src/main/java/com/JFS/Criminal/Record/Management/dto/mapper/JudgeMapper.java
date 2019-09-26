@@ -14,12 +14,14 @@ public class JudgeMapper {
 		register.setEmail(dto.getEmail());
 		register.setPhone(dto.getPhone());
 		register.setCourtName(dto.getCourtName());
+		register.setPassword(dto.getPassword());
 		return 	register;
 		
 	}
 	
 	public static User toUserEntity(JudgeDTO dto) {
 		User judge = new User();
+		judge.setPassword(dto.getPassword());
 		return judge;
 		
 	}

@@ -2,6 +2,7 @@ package com.JFS.Criminal.Record.Management.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller					// @Controller : indicates that the annotated class is a controller.
@@ -16,5 +17,4 @@ public class HomePgController
 	{
 		return "homePg";	//return front end pages
 	}
-	
 }

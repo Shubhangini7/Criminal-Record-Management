@@ -38,18 +38,17 @@ public class JailSupriService {
         jSuperintendent.setDateOfModification(localDateTime);
         jSuperintendent.setDateOfRegistration(localDateTime);
 
-        User user = JailSuperiMapper.toUserEntity(jDto);
-        User storedUser = userRepository.saveAndFlush(user);
-        Credential credential = JailSuperiMapper.toCredentialEntity(jDto);
+        JailSuperintendent savedJailSupri = jailSuperiRepository.saveAndFlush(jSuperintendent);
 
+        Credential credential = JailSuperiMapper.toCredentialEntity(jDto);
         Optional<Role> optionalRole=roleRepository.findByName(com.JFS.Criminal.Record.Management.entity.enumeration.Role.ROLE_JAIL_SUPERINTENDENT.name());
         Role role = optionalRole.orElseThrow(()-> new RoleNotAvailableException());
         credential.getRoles().add(role);
         role.getCredential().add(credential);
-        credential.setUser(storedUser);
-        storedUser.setCredential(credential);
+        credential.setUser(jSuperintendent);
+        savedJailSupri.setCredential(credential);
         
-        JailSuperintendent savedJailSupri = jailSuperiRepository.saveAndFlush(jSuperintendent);
+        JailSuperintendent finalsavedJailSupri = jailSuperiRepository.saveAndFlush(jSuperintendent);
     
     }
 }

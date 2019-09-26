@@ -12,6 +12,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
+import javax.validation.constraints.NotNull;
 
 import org.hibernate.annotations.GenericGenerator;
 
@@ -29,8 +30,6 @@ public class Credential
 
 
     @Id
-    @GeneratedValue(generator = "system-uuid")
-    @GenericGenerator(name = "system-uuid", strategy = "uuid")
     public String getUsername() {
         return username;
     }
@@ -47,7 +46,7 @@ public class Credential
         this.password = password;
     }
 
-    @ManyToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+    @ManyToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     @JoinTable(
             name = "credential_role",
             joinColumns = @JoinColumn(name = "credential"),
@@ -61,7 +60,7 @@ public class Credential
         this.roles = roles;
     }
 
-    @OneToOne( cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+    @OneToOne( cascade = CascadeType.ALL)
     @JoinColumn(name = "userid")
     public User getUser() {
         return user;

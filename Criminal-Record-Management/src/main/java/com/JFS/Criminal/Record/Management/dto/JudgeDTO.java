@@ -15,7 +15,7 @@ public class JudgeDTO {
 	public void setCode(String code) {
 		this.code = code;
 	}
-	public String getName() {
+	public String getName() {                                      
 		return name;
 	}
 	public void setName(String name) {
