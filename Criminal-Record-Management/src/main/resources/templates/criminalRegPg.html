@@ -1,11 +1,20 @@
 
 <!DOCTYPE html>
-<html>
+<html lang ="en" xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
 <body>
-
+<form action="/criminalRegPg" method="post" th:object=${criminalObj}>
+<input type='number' placeholder="Criminal Number" th:field="*{criminalNo}">
+<input type='text' placeholder="Criminal Name" th:field="*{CriminalName}">
+<input type='text' placeholder="blood Group" th:field="*{bloodGroup}">
+<input type='text' placeholder="jail Name" th:field="*{jailName}">
+<input type='number' placeholder="cell No" th:field="*{cellNo}">
+<input type='text' placeholder="assign Work" th:field="*{assignWork}">
+<button type="submit">Login</button>
+<a href="/"> home </a>
+</form>
 </body>
 </html>

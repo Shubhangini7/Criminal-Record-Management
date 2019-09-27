@@ -2,51 +2,65 @@ package com.JFS.Criminal.Record.Management.entity;
 
 import java.time.LocalDateTime;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="Criminal")
 public class Criminal {
-	private String code;
-	private String name;
-	private String email;
-	private String phone;
-	private String unit;
+	
+	private Long criminalNo;
+	private String CriminalName;
+	private String bloodGroup;
+	private String jailName;
+	private String cellNo;
+	private String assignWork;
 	private LocalDateTime dateOfRegistration;
     private LocalDateTime dateOfModification;
     
+    private MeetingWithOutsider meetingWithOutsider;
+    private HealthCondition healthCondition;
+	
     @Id
-	public String getCode() {
-		return code;
+	public Long getCriminalNo() {
+		return criminalNo;
 	}
-	public void setCode(String code) {
-		this.code = code;
+	public void setCriminalNo(Long criminalNo) {
+		this.criminalNo = criminalNo;
 	}
-	public String getName() {
-		return name;
+	public String getCriminalName() {
+		return CriminalName;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setCriminalName(String criminalName) {
+		CriminalName = criminalName;
 	}
-	public String getEmail() {
-		return email;
+	public String getBloodGroup() {
+		return bloodGroup;
 	}
-	public void setEmail(String email) {
-		this.email = email;
+	public void setBloodGroup(String bloodGroup) {
+		this.bloodGroup = bloodGroup;
 	}
-	public String getPhone() {
-		return phone;
+	public String getJailName() {
+		return jailName;
 	}
-	public void setPhone(String phone) {
-		this.phone = phone;
+	public void setJailName(String jailName) {
+		this.jailName = jailName;
 	}
-	public String getUnit() {
-		return unit;
+	public String getCellNo() {
+		return cellNo;
 	}
-	public void setUnit(String unit) {
-		this.unit = unit;
+	public void setCellNo(String cellNo) {
+		this.cellNo = cellNo;
+	}
+	public String getAssignWork() {
+		return assignWork;
+	}
+	public void setAssignWork(String assignWork) {
+		this.assignWork = assignWork;
 	}
 	public LocalDateTime getDateOfRegistration() {
 		return dateOfRegistration;
@@ -60,7 +74,26 @@ public class Criminal {
 	public void setDateOfModification(LocalDateTime dateOfModification) {
 		this.dateOfModification = dateOfModification;
 	}
-    
-    
+	
+	@OneToOne(optional = true)
+	@JoinColumn(name = "meetingId")
+	public MeetingWithOutsider getMeetingWithOutsider() {
+		return meetingWithOutsider;
+	}
+	public void setMeetingWithOutsider(MeetingWithOutsider meetingWithOutsider) {
+		this.meetingWithOutsider = meetingWithOutsider;
+	}
+	
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "healthId")
+	public HealthCondition getHealthCondition() {
+		return healthCondition;
+	}
+	public void setHealthCondition(HealthCondition healthCondition) {
+		this.healthCondition = healthCondition;
+	}
+	
+	
+        
     
 }
