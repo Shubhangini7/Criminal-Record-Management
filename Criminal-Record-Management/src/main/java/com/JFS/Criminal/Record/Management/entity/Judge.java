@@ -9,6 +9,7 @@ import javax.persistence.Table;
 @Entity 
 @Table(name = "Judge")
 public class Judge extends User{
+	
 	private String code;
 	private String name;
 	private String email;

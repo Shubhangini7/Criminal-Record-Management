@@ -1,11 +1,125 @@
-
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-</head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head> 
 <body>
+	<header id="header" class="">
+			<!-- As a heading -->
+		<nav class="navbar navbar-dark bg-secondary ">
+  		<span class="navbar-brand mb-0 h1">Criminal Record Management</span>
+		</nav>	
+	</header><!-- /header -->
 
+	<div class="container"><br>
+		<h2 class="text-center text-secondary">Registration</h2><br>
+		<div class="col-8 m-auto d-block">
+			<form action="/criminalRegPg" method="post" name="regForm" th:object=${criminalObj} onsubmit="return validation()" class="bg-light">
+
+				<div class="form-group">
+					<input type="text" name="CriminalNumber" class="form-control" id="Criminal Number" placeholder="Criminal Number" required="required"   autocomplete="off" th:field="*{criminalNo}">
+					<span id="idcode" class="text-danger font-weight-bold"> </span>
+				</div>
+				<div class="form-group">
+					<input type="text" name="CriminalName" class="form-control" id="CriminalName" placeholder="Criminal Name" required="required" maxlength="20" min="3" 
+					autocomplete="off" th:field="*{CriminalName}">
+					<span id="name" class="text-danger font-weight-bold"> </span>
+				</div>
+				<div class="form-group">
+					<input type="text" name="bg" class="form-control" id="bg" placeholder="blood Group" required="required" maxlength="20" min="3"
+					autocomplete="off" th:field="*{bloodGroup}">
+					<span id="username" class="text-danger font-weight-bold"> </span>
+				</div>
+				<div class="form-group">
+					<input type="text" name="jailName" class="form-control" id="jailName" required="required" placeholder="jail name" th:field="*{jailName}">
+				</div>
+				<div class="form-group">
+					<input type="text" name=""cellNo"" class="form-control" id=""cellNo"" placeholder=""cell No"" required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
+					autocomplete="off" th:field="*{password}">
+					<span id="password" class="text-danger font-weight-bold"> </span>
+				</div>
+			<div class="form-group">
+					<input type="text" name="assignWork" class="form-control" id="assignWork" placeholder="assign Work" required="required" autocomplete="off"  th:field="*{assignWork}">
+					<span id="emails" class="text-danger font-weight-bold"> </span>
+				</div>
+					<input type="submit" name="submit" id="submit" class="btn btn-secondary">
+			</form>
+			
+		</div>
+		
+	</div>
+
+	<script type="text/javascript">
+		function validation()
+		{
+			var code = document.getElementById(code').value;
+			var user = document.getElementById('user').value;
+			var pass = document.getElementById('pass').value;
+			var conpass = document.getElementById('conpass').value;
+			var email = document.getElementById('email').value;
+			var phone = document.getElementById('phone').value;
+			var courtName = document.getElementById('courtName').value;
+			var passw = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
+			 var phoneno = /^\d{10}$/;
+
+			if (code.value == " ") 
+			{
+				document.getElementById('idcode').innerHTML = "please enter identification code";
+				return false;
+			}
+
+			
+			if ((user.length <= 2) || (user.length <= 30)) 
+			{
+				document.getElementById('username').innerHTML = " lenghth must be between 2-20 ";
+				return false;
+			}
+			
+
+			if (pass == " ") 
+			{
+				document.getElementById('password').innerHTML = "Password can't be null";
+				return false;
+			}
+
+
+			if ( pass!=conpass) 
+			{
+				document.getElementById('conPassword').innerHTML = "password are not matching";
+				return false;
+			}
+
+
+			if (email == " ") 
+			{
+				document.getElementById('emails').innerHTML = "please fill the user name";
+				return false;
+			}
+			if (email.indexOf('@') <= 0) 
+			{
+				document.getElementById('emails').innerHTML = " @ at Invalid Position";
+				return false;
+			}
+
+
+			if (phone.length!=10) 
+			{
+				document.getElementById('mobile').innerHTML = "please enter valid mobile no";
+				return false;
+			}
+			if (courtName == " ") 
+			{
+				document.getElementById('court').innerHTML = "please fill the user name";
+				return false;
+			}
+		}
+	</script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>
 </html>

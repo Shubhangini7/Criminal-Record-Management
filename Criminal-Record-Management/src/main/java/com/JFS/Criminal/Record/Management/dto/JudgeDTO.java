@@ -1,6 +1,7 @@
 package com.JFS.Criminal.Record.Management.dto;
 
 public class JudgeDTO {
+	
 	private String code;
 	private String name;
 	private String email;
