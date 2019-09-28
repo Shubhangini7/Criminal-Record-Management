@@ -14,6 +14,7 @@
                 <th>Jail Name</th>
                 <th>Cell No</th>
                 <th>bloodGroup</th>
+                <th>Action</th>
             </tr>
             </thead>
             <tbody id="search_place">
@@ -23,15 +24,13 @@
     			<td th:text="${searchObj.getJailName()}">
     			<td th:text="${searchObj.getCellNo()}">
     			<td th:text="${searchObj.getBloodGroup()}">
+    			
+				<td>
+    				<a th:href = "@{'/edit/' + ${searchObj.criminalNo}}">transfer</a>
+    			</td>
 			</tr>
             </tbody>
-           <!--  <tfoot>
-            <tr>
-                <td><a href="/criminalRegPg">Update</a></td>
-            </tr>
-            </tfoot>-->
         </table>
         </form>
-		<a href="healthCondition">health Condition</a>
        </body>
 </html>

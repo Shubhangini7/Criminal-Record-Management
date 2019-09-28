@@ -6,9 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.JFS.Criminal.Record.Management.dto.CriminalDTO;
 import com.JFS.Criminal.Record.Management.entity.Criminal;
@@ -23,8 +25,6 @@ public class SearchCriminalController {
 	@Autowired
 	private CriminalRepository criminalRepository;
 
-	@Autowired
-	private CriminalService criminalService;
 
 	
 	@GetMapping
@@ -55,18 +55,13 @@ public class SearchCriminalController {
 	        model.addAttribute("cDTOobj",new CriminalDTO());
 	        return "foundCriminal";
 	    }
-	 
-	 @GetMapping("/healthCondition")
-		public String healthCondition(Model model)
-	    {
-	        model.addAttribute("healthObj", new CriminalDTO());
-	        return "healthCondition";
-	    }
-	 
-	 @PostMapping("/healthCondition")
-	 public String healthCondition(CriminalDTO criminalDTO) throws RoleNotAvailableException
+	
+	 @RequestMapping("/transfer/{id}")
+	 public ModelAndView showUpdatePg(@PathVariable(name = "id") Long id)
 	 {
-			criminalService.addCriminal(criminalDTO);
-			return "jailSuperiHomePg";
-	 }
+		 ModelAndView mav = new ModelAndView("transferCriminal");
+		 Criminal criminal = criminalRepository.getOne(id);
+		 mav.addObject("criminal", criminal);
+		 return mav;
+		}
 }

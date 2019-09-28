@@ -26,5 +26,4 @@ public class UpdateCriminal {
 		return mav;
 	}
 	
-
 }

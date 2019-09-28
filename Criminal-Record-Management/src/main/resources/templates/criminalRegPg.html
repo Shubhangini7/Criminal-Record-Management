@@ -19,7 +19,7 @@
 			<form action="/criminalRegPg" method="post" name="regForm" th:object=${criminalObj} onsubmit="return validation()" class="bg-light">
 
 				<div class="form-group">
-					<input type="text" name="CriminalNumber" class="form-control" id="Criminal Number" placeholder="Criminal Number" required="required"   autocomplete="off" th:field="*{criminalNo}">
+					<input type="number" name="CriminalNumber" class="form-control" id="Criminal Number" placeholder="Criminal Number" required="required"   autocomplete="off" th:field="*{criminalNo}">
 					<span id="idcode" class="text-danger font-weight-bold"> </span>
 				</div>
 				<div class="form-group">
@@ -36,15 +36,15 @@
 					<input type="text" name="jailName" class="form-control" id="jailName" required="required" placeholder="jail name" th:field="*{jailName}">
 				</div>
 				<div class="form-group">
-					<input type="text" name=""cellNo"" class="form-control" id=""cellNo"" placeholder=""cell No"" required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
-					autocomplete="off" th:field="*{password}">
+					<input type="text" name="cellNo" class="form-control" id="cellNo" placeholder="cell No" 
+					autocomplete="off" th:field="*{cellNo}">
 					<span id="password" class="text-danger font-weight-bold"> </span>
 				</div>
 			<div class="form-group">
 					<input type="text" name="assignWork" class="form-control" id="assignWork" placeholder="assign Work" required="required" autocomplete="off"  th:field="*{assignWork}">
 					<span id="emails" class="text-danger font-weight-bold"> </span>
 				</div>
-					<input type="submit" name="submit" id="submit" class="btn btn-secondary">
+					<input type="submit" name="submit" id="submit" class="btn btn-secondary text-center">
 			</form>
 			
 		</div>
@@ -120,17 +120,4 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-=======
-<form action="/criminalRegPg" method="post" th:object=${criminalObj}>
-<input type='number' placeholder="Criminal Number" th:field="*{criminalNo}">
-<input type='text' placeholder="Criminal Name" th:field="*{CriminalName}">
-<input type='text' placeholder="blood Group" th:field="*{bloodGroup}">
-<input type='text' placeholder="jail Name" th:field="*{jailName}">
-<input type='number' placeholder="cell No" th:field="*{cellNo}">
-<input type='text' placeholder="assign Work" th:field="*{assignWork}">
-<button type="submit">Login</button>
-<a href="/"> home </a>
-</form>
->>>>>>> branch 'master' of https://github.com/Shubhangini7/Criminal-Record-Management.git
-</body>
 </html>
