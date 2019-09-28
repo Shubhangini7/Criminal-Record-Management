@@ -1,5 +1,9 @@
 <!DOCTYPE html>
+<<<<<<< HEAD
 <html xmlns:th="http://www.thymeleaf.org">
+=======
+<html lang ="en" xmlns:th="http://www.thymeleaf.org">
+>>>>>>> branch 'master' of https://github.com/Shubhangini7/Criminal-Record-Management.git
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +11,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head> 
 <body>
+<<<<<<< HEAD
 	<header id="header" class="">
 			<!-- As a heading -->
 		<nav class="navbar navbar-dark bg-secondary ">
@@ -121,5 +126,17 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+=======
+<form action="/criminalRegPg" method="post" th:object=${criminalObj}>
+<input type='number' placeholder="Criminal Number" th:field="*{criminalNo}">
+<input type='text' placeholder="Criminal Name" th:field="*{CriminalName}">
+<input type='text' placeholder="blood Group" th:field="*{bloodGroup}">
+<input type='text' placeholder="jail Name" th:field="*{jailName}">
+<input type='number' placeholder="cell No" th:field="*{cellNo}">
+<input type='text' placeholder="assign Work" th:field="*{assignWork}">
+<button type="submit">Login</button>
+<a href="/"> home </a>
+</form>
+>>>>>>> branch 'master' of https://github.com/Shubhangini7/Criminal-Record-Management.git
 </body>
 </html>

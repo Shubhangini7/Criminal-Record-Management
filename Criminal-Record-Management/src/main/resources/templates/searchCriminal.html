@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+Criminal Name:
+<input type="search" id="criminal" name="criminalName">
+<button type="button" onclick="fetchCriminal()">Search</button><br> 
+<div>
+    <form action="/searchCriminal/foundCriminal" method="post">
+        <table>
+            <thead>
+            <tr>
+                <th>Criminal No</th>
+                <th>Criminal Name</th>
+                <th>Jail Name</th>
+                <th>Cell No</th>
+            </tr>
+            </thead>
+            <tbody id="search_place">
+            </tbody>
+            <tfoot>
+            <tr>
+                <td> <input type="submit"> </td>
+            </tr>
+            </tfoot>
+        </table>
+    </form>
+</div>
+</body>
+</html>

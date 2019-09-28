@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang ="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="/searchCriminal/foundCriminal" method="post" th:object=${searchObj}>
+        <table>
+            <thead>
+            <tr>
+                <th>Criminal No</th>
+                <th>Criminal Name</th>
+                <th>Jail Name</th>
+                <th>Cell No</th>
+                <th>bloodGroup</th>
+            </tr>
+            </thead>
+            <tbody id="search_place">
+            <tr>
+    			<td th:text="${searchObj.getCriminalNo()}">
+    			<td th:text="${searchObj.getCriminalName()}">
+    			<td th:text="${searchObj.getJailName()}">
+    			<td th:text="${searchObj.getCellNo()}">
+    			<td th:text="${searchObj.getBloodGroup()}">
+			</tr>
+            </tbody>
+           <!--  <tfoot>
+            <tr>
+                <td><a href="/criminalRegPg">Update</a></td>
+            </tr>
+            </tfoot>-->
+        </table>
+        </form>
+		<a href="healthCondition">health Condition</a>
+       </body>
+</html>

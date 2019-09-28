@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang ="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="/searchCriminal/healthCondition" method="post" th:object=${healthObj}>
+<input type='number' placeholder="disease name" th:field="*{disease}">
+<input type='text' placeholder="type" th:field="*{type}">
+<input type='text' placeholder="medicin" th:field="*{medicin}">
+<button type="submit">Login</button>
+<a href="/"> home </a>
+</form>
+</body>
+</html>

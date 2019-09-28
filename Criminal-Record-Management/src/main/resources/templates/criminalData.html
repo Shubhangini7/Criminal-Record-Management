@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<div>
+<table>
+<tr>
+<th>criminal no</th>
+<th>criminal name</th>
+<th>criminal cell no</th>
+<th>criminal jail name</th>
+</tr>
+<tbody>
+<tr>
+<td th:text="${criminal.getCriminalNo()}"></td>
+<td th:text="${criminal.getCriminalName()}"></td>
+<td th:text="${criminal.getCellNo()}"></td>
+<td th:text="${criminal.getJailName()}"></td>
+</tbody>
+</table>
+</div>
+
+</body>
+</html>
