@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang ="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h3>Update data</h3>
+<form  th:action="@{/criminalRegPg}" th:object=${criminal} method="post">
+<table>
+<tr>
+<td>criminal No</td>
+<td><input type="text" th:field="*{criminalNo}"></td>
+</tr>
+ 
+<tr>
+<td>Criminal Name</td>
+<td><input type="text" th:field="*{criminalName}"></td>
+</tr>
+
+<tr>
+<td>jail Name</td>
+<td><input type="text" th:field="*{jailName}"></td>
+</tr>
+
+<tr>
+<td>cell No</td>
+<td><input type="text" th:field="*{cellNo}"></td>
+</tr>
+
+<tr>
+<td>assign Work</td>
+<td><input type="text" th:field="*{assignWork}"></td>
+</tr>
+<tr>
+	<td colspan="2">
+	<button type="submit">save</button>
+	</td>
+</tr>
+</table>
+</form>
+</body>
+</html>
