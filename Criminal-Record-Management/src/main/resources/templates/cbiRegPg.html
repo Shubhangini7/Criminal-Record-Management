@@ -5,19 +5,40 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title></title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<style>
+	.grad{
+	height: 700px;
+    background: linear-gradient(to top, #265077 34%, #6b6e70 74%)
+	}
+	.na{
+	height: 75px;
+    background: #494B68
+	}
+</style>
 </head> 
 <body>
+<div class = 'grad'>
 	<header id="header" class="">
 			<!-- As a heading -->
-		<nav class="navbar navbar-dark bg-secondary ">
-  		<span class="navbar-brand mb-0 h1">Criminal Record Management</span>
+		<nav class="na">
+  		<span class="navbar-brand mb-0 h1 text-white"><h2>Criminal Record Management</h2></span>
+  		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+  		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+  		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+  		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+  		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+  		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+  		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+  		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+  		
+  		<a href="/" class="navbar-brand mb-0 h1 text-white text-right">home</a><br>
 		</nav>	
 	</header><!-- /header -->
 
 	<div class="container"><br>
-		<h2 class="text-center text-secondary">Registration</h2><br>
+		<h3 class="text-center text-white">Registration</h3><br>
 		<div class="col-8 m-auto d-block">
-			<form action="/cbiRegPg" method="post" name="regForm" th:object=${cbiObj} onsubmit="return validation()" class="bg-light">
+			<form action="/cbiRegPg" method="post" name="regForm" th:object=${cbiObj} onsubmit="return validation()" >
 
 				<div class="form-group">
 					<input type="text" name="id" class="form-control" id="code" placeholder="identification code" required="required"   autocomplete="off" th:field="*{code}">
@@ -55,6 +76,9 @@
 				<div class="form-group">
 					<input type="text" name="unit" class="form-control" id="unit" required="required" placeholder="unit" th:field="*{unit}">
 				</div>
+					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+			
 					<input type="submit" name="submit" id="submit" class="btn btn-secondary">
 			</form>
 			
@@ -131,5 +155,6 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+ </div>
 </body>
 </html>

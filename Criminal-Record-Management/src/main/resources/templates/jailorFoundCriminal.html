@@ -1,12 +1,46 @@
 <!DOCTYPE html>
 <html lang ="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<head>	
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<style>
+	.grad{
+	height: 700px;
+    background: linear-gradient(to top, #265077 34%, #6b6e70 74%)
+	}
+	.na{
+	height: 75px;
+    background: #494B68
+	}
+</style>
 </head>
 <body>
+<div class = 'grad'>
+	<header id="header" class="">
+			<!-- As a heading -->
+		<nav class="na">
+  		<span class="navbar-brand mb-0 h1 text-white"><h2>Criminal Record Management</h2></span>
+  		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+  		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+  		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+  		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+  		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+  		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+  		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+  		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+  		
+  		<a href="/" class="navbar-brand mb-0 h1 text-white text-right">home</a><br>
+		</nav>	
+	</header><!-- /header -->
+
+	<div class="container"><br>
+		<h3 class="text-center text-white">Criminal Details</h3><br>
+		<div class="col-8 m-auto d-block">
+
 <form action="crimialFound" method="post" th:object=${searchObj}>
-        <table>
+        <table class="table table-bordered text-white">
             <thead>
             <tr>
                 <th>Criminal No</th>
@@ -25,14 +59,18 @@
     			<td th:text="${searchObj.getCellNo()}">
     			<td th:text="${searchObj.getBloodGroup()}">
     			<td>
-    				<a th:href = "@{'/edit/' + ${searchObj.criminalNo}}">Update</a>
+    				<a th:href = "@{'/edit/' + ${searchObj.criminalNo}}" class="text-white">Update</a>
     				&nbsp;&nbsp;&nbsp;&nbsp;
-    				<a th:href = "@{'/delete/' + ${searchObj.criminalNo}}">Delete</a>
+    				<a th:href = "@{'/delete/' + ${searchObj.criminalNo}}"class="text-white">Delete</a>
     			</td>
 			</tr>
             </tbody>
          </table>
         </form>
 		<a href="healthCondition">health Condition</a>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</div>
        </body>
 </html>
